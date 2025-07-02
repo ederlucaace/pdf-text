@@ -48,6 +48,14 @@ android {
     }
 }
 
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "11"           // era "1.8"
+        // Opcional → habilita o toolchain novo:
+        // jvmToolchain(17)
+    }
+}
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.tom-roush:pdfbox-android:2.0.22.0'
